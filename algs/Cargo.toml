@@ -1,0 +1,14 @@
+[package]
+name = "algs"
+version = "0.1.0"
+authors = ["kamil <kamil.burdzinski@student.put.poznan.pl>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+csv = "1.1.5"
+ndarray = "0.14.0"
+ndarray-csv = "0.5.0"
+ndarray-linalg = "0.12.1"
+rand = "0.8.3"
