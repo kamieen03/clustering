@@ -22,7 +22,7 @@ def main():
                                  cluster_std=[1.0, 2.5, 0.5])[0]
 
     for i in range(6):
-        np.savetxt(f'data/{i+1}.csv', data[i], delimiter=' ')
+        np.savetxt(f'data/in/{i+1}.csv', data[i], delimiter=' ')
         plt.subplot(2, 3, i+1)
         plt.title(i+1)
         plt.scatter(data[i][:,0], data[i][:,1])
