@@ -15,7 +15,7 @@ fn read_array(filename: String) -> Array2<f32> {
 }
 
 pub fn read_datafiles() -> Vec<Array2<f32>> {
-    let data: Vec<Array2<f32>> = (0..6)
+    let data: Vec<Array2<f32>> = (1..=6)
         .map(|i| format!("data/in/{}.csv", i))
         .map(read_array)
         .collect();

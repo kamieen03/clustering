@@ -3,7 +3,7 @@ use super::clustering::Clustering;
 use ndarray::{Array, Array1, Array2, ArrayView, Axis, Dim, Ix};
 use rand::distributions::{Distribution, Uniform};
 
-impl<'a> Clustering<'a> {
+impl <'a> Clustering <'a> {
     fn cluster_data(&mut self, means: &[Array1<f32>]) {
         for (i, point) in self.data.axis_iter(Axis(0)).enumerate() {
             let (idx, _) = means
@@ -54,11 +54,11 @@ fn init_means(data: &Array2<f32>, k: u16) -> Vec<Array1<f32>> {
 }
 
 fn diffnormaa(x: &Array1<f32>, y: &Array1<f32>) -> f32 {
-    (x - y).iter().map(|x| x.powi(2)).sum()
+    (x - y).mapv(|x| x.powi(2)).sum().sqrt()
 }
 
 fn diffnormav(x: &Array1<f32>, y: &ArrayView<f32, Dim<[Ix; 1]>>) -> f32 {
-    (x - y).iter().map(|x| x.powi(2)).sum()
+    (x - y).mapv(|x| x.powi(2)).sum().sqrt()
 }
 
 pub fn kmeans(d: &Array2<f32>, k: u16) -> Clustering {
